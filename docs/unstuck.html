@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn JavaScript</title>
+        <link rel="shorcut icon" href="images/js.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            textarea {
+                height: 100px;
+                width: 600px;
+                border-radius: 0;
+                border: 1px solid black;
+                padding: 5px;
+                font-size: 20px;
+                padding: 0;
+            }
+            #logo {
+                float: left;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            nav {
+                padding: 20px;
+                font-size: 24px;
+            }
+            button {
+                float: left;
+            }
+            a {
+                background-color: white;
+                color: black;
+                font-family: 'Open Sans', sans-serif;
+            }
+            footer {
+                bottom: 0px;
+                position: fixed;
+                height: 50px;
+                width: 100%;
+                background-color: #f1f1f1;
+                color: black;
+                font-size: 15px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            a:hover {
+                color: grey;
+            }
+            /* light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+.dark-mode-toggle .light-mode-icon {
+  display: none;
+}
+.dark-mode-icon {
+    font-size: 45px;
+}
+.light-mode-icon {
+    font-size: 45px;
+}
+.label {
+    float: left;
+}
+.print-button {
+    position: absolute;
+    left: 320px;
+}
+.print-icon {
+    font-size: 45px;
+}
+.refresh-icon {
+    font-size: 45px;
+}
+.refresh-button {
+    position: absolute;
+    left: 385px;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="learnjs.html"><img title="The logo of JavaScript" src="images/js.png" id="logo" height="200px"></a><h1>Learn JavaScript</h1>
+        <nav><a href="learnjs.html" title="Our Learn JS tutorial">Learn JS</a>&nbsp;&nbsp;&nbsp;<a href="editors.html">Code Editors</a>&nbsp;&nbsp;&nbsp;<a href="learnpy.html" title="Our Python Course">Learn Python</a></nav>
+        <p class="label">Mode:</p>
+        <button id="mode-toggle" class="dark-mode-toggle">
+            <i title="Switch to dark mode" class="material-icons dark-mode-icon">dark_mode</i>
+            <i title="Switch to light mode" class="material-icons light-mode-icon">light_mode</i>
+          </button>                
+          <button class="print-button" onclick="window.print();" title="Print this page">
+            <i class="material-icons print-icon" title="Print this page">print</i>
+          </button>          
+          <button class="refresh-button" onclick="refreshPage()" title="Refresh/clear consoles">
+            <i class="material-icons refresh-icon" title="Refresh/clear consoles">refresh</i>
+          </button>
+        </header>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h1>Logging to the console</h1> 
+        <p>If you have any problems with logging to the console, watch this video:</p>
+        <video src="videos/consolelogging.mp4" height="400px" style="margin: auto;" controls poster="images/helloworld.png" title="A video of Albert Kemp explaining the console.log() method"></video>
+        <h2>Albert Kemp explains the console.log() method &uparrow;| console.log() | video | explanation | Albert Kemp
+        </h2>
+        <footer>Copyright &copy; Albert Kemp 2023. All rights reserved.</footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script>   
+        const modeToggleBtn = document.getElementById('mode-toggle');
+const body = document.body;
+
+modeToggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    modeToggleBtn.classList.add('light-mode-toggle');
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'inline-block';
+  } else {
+    modeToggleBtn.classList.remove('light-mode-toggle');
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'inline-block';
+  }
+});        
+            </script>
+    </body>
+</html>

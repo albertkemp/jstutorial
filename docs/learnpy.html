@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn Python</title>
+        <link rel="shorcut icon" href="images/python.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            textarea {
+                height: 100px;
+                width: 600px;
+                border-radius: 0;
+                border: 1px solid black;
+                padding: 5px;
+                font-size: 20px;
+                padding: 0;
+            }
+            textarea.dark-mode {
+                background-color: grey;
+            }
+            #logo {
+                float: left;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            nav {
+                padding: 20px;
+                font-size: 24px;
+            }
+            button {
+                float: left;
+            }
+            a {
+                background-color: white;
+                color: black;
+                font-family: 'Open Sans', sans-serif;
+            }
+            footer {
+                bottom: 0px;
+                position: fixed;
+                height: 50px;
+                width: 100%;
+                background-color: #f1f1f1;
+                color: black;
+                font-size: 15px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            a:hover {
+                color: grey;
+            }
+            /* light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+.dark-mode-toggle .light-mode-icon {
+  display: none;
+}
+.dark-mode-icon {
+    font-size: 45px;
+}
+.light-mode-icon {
+    font-size: 45px;
+}
+.label {
+    float: left;
+}
+.print-button {
+    position: absolute;
+    left: 325px;
+}
+.print-icon {
+    font-size: 45px;
+}
+.refresh-icon {
+    font-size: 45px;
+}
+.refresh-button {
+    position: absolute;
+    left: 385px;
+}
+.borderexample {
+    border: 1px solid grey;
+    width: 50%;
+    padding: 20px;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+}
+input[type="radio"] {
+  height: 20px;
+  width: 20px;
+}
+li {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+  padding: 20px;
+}
+#advertisement {
+    background-color: rgb(224, 240, 246);
+    height: 150px;
+    width: 150px;
+    padding: 30px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border: 1px solid rgb(203, 203, 203);
+}
+#h2ad {
+    background-color: rgb(224, 240, 246);
+    color: black;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+          <div id="advertisement"><h2 id="h2ad">Try our quiz!</h2><a href="#quizheader"><button title="try our Python quiz">Try it now!</button></a></div>
+            <a href="learnpy.html"><img title="The Python logo" src="images/python.png" id="logo" height="200px"></a><h1>Learn Python</h1>
+        <nav><a href="learnjs.html" title="Our Learn JS tutorial">Learn JS</a>&nbsp;&nbsp;&nbsp;<a href="editors.html">Code Editors</a>&nbsp;&nbsp;&nbsp;<a href="learnpy.html" title="Our Python Course">Learn Python</a></nav>
+        <p class="label">Mode:</p>
+        <button id="mode-toggle" class="dark-mode-toggle" type="button">
+            <i title="Switch to dark mode" class="material-icons dark-mode-icon">dark_mode</i>
+            <i title="Switch to light mode" class="material-icons light-mode-icon">light_mode</i>
+          </button>                
+          <button class="print-button" onclick="window.print();" title="Print this page" type="button">
+            <i class="material-icons print-icon" title="Print this page">print</i>
+          </button>          
+          <button class="refresh-button" onclick="refreshPage()" title="Refresh/clear consoles" type="button">
+            <i class="material-icons refresh-icon" title="Refresh/clear consoles">refresh</i>
+          </button>
+        </header>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h2>#1. Introduction to Python:</h2>
+        <p>Python is a widely used programming language used for datasets, processing, backend, chatbots, numbers and many other purposes. It has very simple syntax and can be learned quickly!</p>
+        <hr>
+        <h2>Logging to the console.</h2>
+        <p>Hopefully, you have a console set up. If not, you can try Programiz's <a href="https://www.programiz.com/python-programming/online-compiler/">Online Python Compiler</a>. I have used it and it is quite useful.</p>
+        <p>To log to the console, you can use this method:</p>
+        <img src="images/pyprint.png" height="50px" alt="A print() code block in Python" title="The print keyword">
+            <p>You don't have to use double quotes ("") you can use single quotes to ('')</p>
+            <p></p>
+            <p>Now try typing this into our console and seeing what happens:</p>
+            <h2>Console:</h2>
+            <textarea id="textarea1">//Type your input in here</textarea><button onclick="runConsole()" title="Run Code">Run</button>
+            <br>
+            <h2>Output:</h2>
+            <textarea id="textarea2">//Output will appear here</textarea>
+            <p id="p1"></p>
+            <br>
+            <hr>
+            <h2>Variables:</h2>
+            <p>Declaring a variable in Python is really easy! Let's take a look at this example:</p>
+            <img src="images/pyvar.png" height="125px" alt="A Python variable" title="Python variable">
+            <p>In the example above, the variable has a name called 'chicken'. Variables store information, and basically this one is storing the value/string of 'hen'. When you go <code>print(chicken)</code> to the console, it doesn't print 'chicken' to the console, but 'hen'. That is because the value of chicken is hen, not chicken. If we put 'chicken' in quotes, it would print 'chicken' to the console.</p>
+            <p>Why don't you have a go at doing the example in the image? You can do it in the console below:</p>
+            <textarea id="textarea3">//Type your input in here</textarea><button onclick="runVariable()" title="Run Code">Run</button> 
+            <br>
+            <h2>Output:
+            </h2>
+            <textarea id="textarea4">//Output will appear here</textarea>
+            <p id="p2"></p>
+            <br>
+            <hr>
+            <h2>Python comments:</h2>
+            <p>To label a part of the code, or stop some code from being run, you can use Python comments. A block comment (for multiple lines of code) is used like this: """this is a block comment""" while a line comment for a single line is used like this: #this is a line comment.</p>
+            <img src="images/pycomments.png" height="150px" alt="a python comment" title="a python comment">
+            <br>
+            <hr>
+            <h2>If statements</h2>
+            <p>If statements are used to check if a condition is true or false. If it is true, it will run the code inside the if statement. If it is false, it will not run the code inside the if statement. Let's take a look at an example:</p>
+            <img src="images/pyif.png" height="150px" alt="an if statement" title="an if statement">
+            <p>In the example above, it checks if chicken is hen. If chicken is hen, then it will print Chicken is a hen.</p>
+            <p>Now try running the output:</p>
+            <h2>Console:</h2>
+            <textarea id="textarea5">//Output will appear here</textarea><button onclick="runIf()" title="Run Code">Run</button>
+            <p id="p3"></p>
+            <p>But what if the chicken is a pigeon? You can specify something like that with the elif statement:</p>
+            <img src="images/elif.png" height="200px" alt="An else if statement" title="Elif (else if)">
+            <p>But there are so many other possibilities it could be. So, we can add a general else statement for it to go to if all else isn't true.</p>
+            <img src="images/pyelse.png" height="220px" alt="The else statement" title="The else statement">
+            <p>Now try running the output:</p>
+            <h2>Console:</h2>
+            <textarea id="textarea6">//Output will appear here</textarea><button onclick="runElse()" title="Run Code">Run</button>
+            <p id="p4"></p>
+            <br>
+            <hr>
+            <h2>Functions</h2>
+            <p>What if you want to print Hello 3 times. It would be annoying to write all that code. So you can use a function to do it!</p>
+            <img src="images/pyfunc.png" height="250px" alt="A function" title="Print hello 3 times">
+            <p>In example above, we have a while loop in a function. The while loop prints it 3 times (we'll talk about that later) but the main part is the <code>printHello3times()</code> part which runs the function. If you type that in again, you can print Hello 6 times!</p>
+            <p>Now try running the output:</p>
+            <h2>Console:</h2>
+            <textarea id="textarea7">//Output will appear here</textarea><button onclick="runFunc()" title="Run Code">Run</button>
+            <p id="p5"></p>
+            <br>
+            <hr>
+            <h2>While and for loops</h2>
+            <p>While loops are used to repeat a block of code while a condition is true. For loops are used to repeat a block of code a certain number of times. Let's take a look at an example:</p>
+            <img src="images/pywhile.png" height="200px" alt="A while loop" title="A while loop">
+            <p>In the example above, a variable called <code>i</code> is declared with a value of 0 and in the while loop, while i is under 10 then increment i by 1 and print i. So it prints 1 to 10.</p>
+            <p>Now let's take a look at a for loop:</p>
+            <img src="images/pyfor.png" height="100px" alt="A for loop" title="A for loop">
+            <p>For loops use a lot less code than while loops in Python. This is basically saying while i is in the range of 0 to 10 then print i + 1. The reason it is + 1 is because it is not in the range if it is exactly ten.</p>
+            <p>Now try running the output:</p>
+            <h2>Console:</h2>
+            <textarea id="textarea8">//Output will appear here</textarea><button onclick="runWhile()" title="Run Code">Run</button>
+            <p id="p6"></p>
+            <br>
+            <hr>
+            <h2>Greater (&gt;) and Lesser (&lt;)</h2>
+            <p>Greater than and lesser than are used to check if a number is greater than or lesser than another number. Let's take a look at an example:</p>
+            <img src="images/pygt.png" height="250px" alt="greater and lesser" title="Greater and Lesser in Python">
+            <p>In the example above, it checks if num1 (30) is greater than num2 (70). Since num2 is obviously bigger, it goes to the next option. Num2 is bigger so it prints: "Num1 is lesser than num2." to the console.</p>
+            <p>Now try running the output:</p>
+            <h2>Console:</h2>
+            <textarea id="textarea9">//Output will appear here</textarea><button onclick="runGt()" title="Run Code">Run</button>
+            <p id="p7"></p>
+            <br>
+            <hr>
+            <h2>Arrays:</h2>
+            <p>Arrays are used to store multiple values in one variable. Let's take a look at an example:</p>
+            <img src="images/pyarray.png" height="100px" alt="an array" title="an array">
+            <p>In the example above, the array stores the value of the variable. They can store multiple strings at once, as you can see.</p>
+            <p>To print a specific string in an array, flower is shoppingList[0], eggs is shoppingList[1], and bread is shoppingList[2]. Printing shoppingList[1] will print eggs to the console.</p>
+            <p>Now try running the code:</p>
+            <h2>Console:</h2>
+            <textarea id="textarea10">//Output will appear here</textarea><button onclick="runArray()" title="Run Code">Run</button>
+            <p id="p8"></p>
+            <hr id="quizheader">
+            <h2>Quiz:</h2>
+            <p>Now that you have learnt the concepts of Python, you can do a quiz! There is an answer sheet, but if you want to do the quiz, <b>do not</b> go to it before you are done. You can also check your scores at the end so if that is for you, please do the question once so we can get an accurate score.</p>
+            <br>
+            <hr>
+            <h2>Question 1:</h2>
+            <p>What are Python comments? Choose all options that apply.</p>
+            <ol>
+              <li><input type="checkbox" id="q1c1">//This is a comment</li>
+              <li><input type="checkbox" id="q1c2">-- This is a comment</li>
+              <li><input type="checkbox" id="q1c3">#This is a comment</li>
+              <li><input type="checkbox" id="q1c4">&lt;!--This is a comment--&gt;</li>
+              <li><input type="checkbox" id="q1c5">"""This is a comment"""</li>
+              <li><input type="checkbox" id="q1c6">/* This is a comment */</li>
+            </ol>
+            <button onclick="checkq1Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q1results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Question 2:</h2>
+            <p>Complete this print statement:</p>
+            <p><input id="q2c1">("Hello World!")</p>
+            <button onclick="checkq2Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q2results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Question 3:</h2>
+            <p>What will this if else statement print to the console?</p>
+            <img src="images/quizelif.png" height="250px" alt="an if...else statement" title="an if...else statement">
+            <ol>
+              <li><input type="radio" id="q3c1" name="q2">The chicken is a car</li>
+              <li><input type="radio" id="q3c2" name="q2">The chicken isn't a car</li>
+              <li><input type="radio" id="q3c3" name="q2">The chicken isn't one of those options.</li>
+            </ol>
+            <button onclick="checkq3Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q3results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Question 4:</h2>
+            <p>What will this simple for loop print?</p>
+            <img src="images/pyquizfor.png" height="150px" alt="a for loop" title="a for loop">
+            <ol>
+              <li><input type="radio" id="q4c1" name="q4">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20</li>
+              <li><input type="radio" id="q4c2" name="q4">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21</li>
+              <li><input type="radio" id="q4c3" name="q4">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19</li>
+              <li><input type="radio" id="q4c4" name="q4">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20</li>
+            </ol>
+            <button onclick="checkq4Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q4results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Question 5:</h2>
+            <p>What will this while loop print?</p>
+            <img src="images/quizpywhile.png" height="250px" alt="a while loop" title="a while loop">
+            <ol>
+              <li><input type="radio" id="q5c1" name="q5">1, 2, 3</li>
+              <li><input type="radio" id="q5c2" name="q5">hello, hello, hello, hello &infin;</li>
+              <li><input type="radio" id="q5c3" name="q5">hello, hello, hello, hello</li>
+              <li><input type="radio" id="q5c4" name="q5">hello, hello, hello</li>
+            </ol>
+            <button onclick="checkq5Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q5results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Question 6:</h2>
+            <p>Which piece of code is correct? Choose all options that apply.</p>
+            <ol>
+              <li><input type="checkbox" id="q6c1">console.log('hello world');</li>
+              <li><input type="checkbox" id="q6c2">print('hello world');</li>
+              <li><input type="checkbox" id="q6c3">console.log("hello world");</li>
+              <li><input type="checkbox" id="q6c4">print('hello world')</li>
+              <li><input type="checkbox" id="q6c5">print("hello world");</li>
+              <li><input type="checkbox" id="q6c6">print("hello world")</li>
+              <li><input type="checkbox" id="q6c7">console.log('hello world')</li>
+              <li><input type="checkbox" id="q6c8">console.log("hello world")</li>
+            </ol>
+            <button onclick="checkq6Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q6results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Question 7:</h2>
+            <p>What will the output be of the example below?</p>
+            <img src="images/pyquizgt.png" height="250px" alt="greater and lesser" title="greater and lesser">
+            <ol>
+              <li><input type="radio" id="q7c1" name="q7">num1 is greater than num2</li>
+              <li><input type="radio" id="q7c2" name="q7">num1 and num2 are the same</li>
+              <li><input type="radio" id="q7c3" name="q7">num1 is lesser than num2</li>
+            </ol>
+            <button onclick="checkq7Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q7results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Question 8:</h2>
+            <p>What will this print to the console?</p>
+            <img src="images/pyquizarray.png" height="100px" alt="an array" title="an array">
+            <ol>
+              <li><input type="radio" id="q8c1" name="q8">orange</li>
+              <li><input type="radio" id="q8c2" name="q8">yellow</li>
+              <li><input type="radio" id="q8c3" name="q8">pink</li>
+              <li><input type="radio" id="q8c4" name="q8">white</li>
+              <li><input type="radio" id="q8c5" name="q8">red</li>
+            </ol>
+            <button onclick="checkq8Answers()" title="check my results">Check my results</button>
+            <h2>Results:</h2>
+            <p id="q8results">Your results will appear here</p>
+            <br>
+            <hr>
+            <h2>Congratulations! You've completed the quiz!</h2>
+            <p>You can check your answers or fill out the quiz again. <a href="#quizheader"><button onclick="refreshPage()" title="fill the quiz out again">fill out the quiz again</button></a><a href="pyanswers.html"><button title="show answer sheet">View question answers</button></a></p>
+        <button onclick="showScore()" title="show how many questions you got right">Show my score</button><p>You can also show your score for how many questions you got right!</p>
+        <h2>Score:</h2>
+        <p id="showscore">Your score will appear here</p>
+        <a href="learnpy.html"><button class="mybtn" title="go back to the top of the page">Back to top</button></a>
+        <footer>Copyright &copy; Albert Kemp 2023. All rights reserved.</footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script>
+            var score = 0;
+            //Check the answers for Question 1
+            function checkq1Answers() {
+            var q1c1 = document.getElementById("q1c1");
+            var q1c2 = document.getElementById("q1c2");
+            var q1c3 = document.getElementById("q1c3");
+            var q1c4 = document.getElementById("q1c4");
+            var q1c5 = document.getElementById("q1c5");
+            var q1c6 = document.getElementById("q1c6");
+            var q1results = document.getElementById("q1results");
+            if (q1c3.checked && q1c5.checked && !q1c1.checked && !q1c2.checked && !q1c4.checked && !q1c6.checked) {
+            q1results.innerHTML = "✅ Correct!";
+            score++;
+            } else {
+            q1results.innerHTML = "❌ Incorrect!";
+            }
+            }
+            function checkq2Answers() {
+            var q2c1 = document.getElementById("q2c1").value;
+            var q2results = document.getElementById("q2results");
+            if (q2c1 == "print") {
+            q2results.innerHTML = "✅ Correct!";
+            score++;
+            } else {
+            q2results.innerHTML = "❌ Incorrect!";
+            }  
+            }
+            function checkq3Answers() {
+              var q3c1 = document.getElementById("q3c1");
+              var q3c2 = document.getElementById("q3c2");
+              var q3c3 = document.getElementById("q3c3");
+              var q3results = document.getElementById("q3results");
+              if (q3c1.checked && !q3c2.checked && !q3c3.checked) {
+              q3results.innerHTML = "✅ Correct!";
+              score++;
+            } else {
+            q3results.innerHTML = "❌ Incorrect!";
+            }
+          }
+          function checkq4Answers() {
+            var q4c1 = document.getElementById("q4c1");
+            var q4c2 = document.getElementById("q4c2");
+            var q4c3 = document.getElementById("q4c3");
+            var q4c4 = document.getElementById("q4c4");
+            var q4results = document.getElementById("q4results");
+            if (q4c3.checked && !q4c1.checked && !q4c2.checked && !q4c4.checked) {
+            q4results.innerHTML = "✅ Correct!";
+            score++;
+            } else {
+            q4results.innerHTML = "❌ Incorrect!";
+          }
+        }
+        function checkq5Answers() {
+          var q5c1 = document.getElementById("q5c1");
+          var q5c2 = document.getElementById("q5c2");
+          var q5c3 = document.getElementById("q5c3");
+          var q5c4 = document.getElementById("q5c4");
+          var q5results = document.getElementById("q5results");
+          if (q5c4.checked && !q5c1.checked && !q5c2.checked && !q5c3.checked) {
+          q5results.innerHTML = "✅ Correct!";
+          score++;
+          } else {
+          q5results.innerHTML = "❌ Incorrect!";
+          }
+        }
+        function checkq6Answers() {
+          var q6c1 = document.getElementById("q6c1");
+          var q6c2 = document.getElementById("q6c2");
+          var q6c3 = document.getElementById("q6c3");
+          var q6c4 = document.getElementById("q6c4");
+          var q6c5 = document.getElementById("q6c5");
+          var q6c6 = document.getElementById("q6c6");
+          var q6c7 = document.getElementById("q6c7");
+          var q6c8 = document.getElementById("q6c8");
+          var q6results = document.getElementById("q6results");
+          if (q6c4.checked && q6c6.checked && !q6c1.checked && !q6c2.checked && !q6c3.checked && !q6c5.checked && !q6c7.checked && !q6c8.checked) {
+          q6results.innerHTML = "✅ Correct!";
+          score++;
+          } else {
+          q6results.innerHTML = "❌ Incorrect!";
+          }
+        }
+        function checkq7Answers() {
+          var q7c1 = document.getElementById("q7c1");
+          var q7c2 = document.getElementById("q7c2");
+          var q7c3 = document.getElementById("q7c3");
+          var q7results = document.getElementById("q7results");
+          if (q7c1.checked && !q7c2.checked && !q7c3.checked) {
+          q7results.innerHTML = "✅ Correct!";
+          score++;
+          } else {
+          q7results.innerHTML = "❌ Incorrect!";
+          }
+        }
+        function checkq8Answers() {
+          var q8c1 = document.getElementById("q8c1");
+          var q8c2 = document.getElementById("q8c2");
+          var q8c3 = document.getElementById("q8c3");
+          var q8c4 = document.getElementById("q8c4");
+          var q8c5 = document.getElementById("q8c5");
+          var q8results = document.getElementById("q8results");
+          if (q8c4.checked && !q8c1.checked && !q8c2.checked && !q8c3.checked && !q8c5.checked) {
+          q8results.innerHTML = "✅ Correct!";
+          score++;
+          } else {
+          q8results.innerHTML = "❌ Incorrect!";
+          }
+        }
+            function showScore() {
+            var scoredisplay = document.getElementById("showscore");
+            scoredisplay.innerHTML = "You got " + score + "/8 correct.";
+        }
+        function runArray() {
+          var textarea10 = document.getElementById("textarea10");
+          var p8 = document.getElementById("p8");
+          textarea10.value = "['flower', 'eggs', 'bread']";
+          p8.innerHTML = "✅ Your code has been successfully executed!";
+          }
+            function runGt() {
+            var textarea9 = document.getElementById("textarea9");
+            textarea9.value = "num1 is lesser than num2.";
+            var p7 = document.getElementById("p7");
+            p7.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runWhile() {
+            var textarea8 = document.getElementById("textarea8");
+            textarea8.value = "1\n2\n3\n4\n5\n6\n7\n8\n9\n10";
+            var p6 = document.getElementById("p6");
+            p6.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runFunc() {
+            var textarea7 = document.getElementById("textarea7");
+            textarea7.value = "Hello\nHello\nHello";
+            var p5 = document.getElementById("p5");
+            p5.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runElse() {
+            var textarea6 = document.getElementById("textarea6");
+            textarea6.value = "The chicken is a pigeon";
+            var p4 = document.getElementById("p4");
+            p4.innerHTML = "✅ Your code has been successfully executed!";
+            }
+        function runIf() {
+            var textarea5 = document.getElementById("textarea5");
+            textarea5.value = "The chicken is a hen";
+            var p3 = document.getElementById("p3");
+            p3.innerHTML = "✅ Your code has been successfully executed!";
+            }         
+            function runConsole() {
+  var textarea1value = document.getElementById("textarea1").value;
+  if (textarea1value === 'print("Hello World!")') {
+    var textarea2 = document.getElementById("textarea2");
+    textarea2.value = "Hello World!";
+    var p1 = document.getElementById("p1");
+    p1.innerHTML = "✅ Your code has been successfully executed!";
+  } else if (textarea1value === "print('Hello World!')") {
+    var textarea2 = document.getElementById("textarea2");
+    textarea2.value = "Hello World!";
+    var p1 = document.getElementById("p1");
+    p1.innerHTML = "✅ Your code has been successfully executed!";
+  } else {
+    var textarea2 = document.getElementById("textarea2");
+    textarea2.value = "";
+    var p1 = document.getElementById("p1");
+    p1.innerHTML = "❌ Your code is incorrect. Perhaps you have a typo?";
+  }
+}
+function runVariable() {
+  var textarea3value = document.getElementById("textarea3").value;
+  if (textarea3value === 'chicken = "hen" print(chicken)') {
+    var textarea4 = document.getElementById("textarea4");
+    textarea4.value = "hen";
+    var p2 = document.getElementById("p2");
+    p2.innerHTML = "✅ Your code has been successfully executed!";
+  } else if (textarea3value === "chicken = 'hen' print(chicken)") {
+    var textarea4 = document.getElementById("textarea4");
+    textarea4.value = "hen";
+    var p2 = document.getElementById("p2");
+    p2.innerHTML = "✅ Your code has been successfully executed!";
+  } else if (textarea3value === "chicken = 'hen'\nprint(chicken)") {
+  var textarea4 = document.getElementById("textarea4");
+    textarea4.value = "hen";
+    var p2 = document.getElementById("p2");
+    p2.innerHTML = "✅ Your code has been successfully executed!";
+  } else if (textarea3value === 'chicken = "hen"\nprint(chicken)') {
+    var textarea4 = document.getElementById("textarea4");
+    textarea4.value = "hen";
+    var p2 = document.getElementById("p2");
+    p2.innerHTML = "✅ Your code has been successfully executed!";
+  } else {
+    var textarea4 = document.getElementById("textarea4");
+    textarea4.value = "";
+    var p2 = document.getElementById("p2");
+    p2.innerHTML = "❌ Your code is incorrect. Perhaps you have a typo?";
+  }
+}
+const modeToggleBtn = document.getElementById('mode-toggle');
+const body = document.body;
+
+modeToggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    modeToggleBtn.classList.add('light-mode-toggle');
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'inline-block';
+  } else {
+    modeToggleBtn.classList.remove('light-mode-toggle');
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'inline-block';
+  }
+});
+function refreshPage() {
+  var textareas = document.getElementsByTagName("textarea");
+  for (var i = 0; i < textareas.length; i++) {
+    var currentTextarea = textareas[i];
+    if (currentTextarea.id === "inputtextarea") {
+      currentTextarea.value = "//Put your input in here";
+    } else if (currentTextarea.id === "inputtextareavar") {
+      currentTextarea.value = "//Put your input in here";
+    } else {
+      currentTextarea.value = "//Output will appear here";
+    }
+}
+var inputs = document.getElementsByTagName("input");
+for (var i = 0; i < inputs.length; i++) {
+    var currentInput = inputs[i];
+    currentInput.value = "";
+}
+
+var pTags = document.querySelectorAll("p[id^='p']");
+  for (var i = 0; i < pTags.length; i++) {
+    pTags[i].innerHTML = "";
+  }
+  var otherps = document.querySelectorAll("p[id^='q']");
+  for (var i = 0; i < otherps.length; i++) {
+    otherps[i].innerHTML = "";
+  }
+  var inputcheckboxes = document.getElementsByTagName("input");
+  for (var i = 0; i < inputcheckboxes.length; i++) {
+    var currentCheckbox = inputcheckboxes[i];
+    if (currentCheckbox.type === "checkbox") {
+      currentCheckbox.checked = false;
+    }
+  }
+  var thisinput = document.getElementById("q2c1");
+  thisinput.value = "";
+  var showscore = document.getElementById("showscore");
+showscore.innerHTML = "Your score will appear here.";
+
+var radios = document.getElementsByTagName("input");
+  for (var i = 0; i < radios.length; i++) {
+    var currentRadio = radios[i];
+    if (currentRadio.type === "radio") {
+      currentRadio.checked = false;
+    }
+  }
+
+score = 0;
+}
+
+            </script>
+    </body>
+</html>

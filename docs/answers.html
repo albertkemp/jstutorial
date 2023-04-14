@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn JavaScript</title>
+        <link rel="shorcut icon" href="images/js.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            textarea {
+                height: 100px;
+                width: 600px;
+                border-radius: 0;
+                border: 1px solid black;
+                padding: 5px;
+                font-size: 20px;
+                padding: 0;
+            }
+            #logo {
+                float: left;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            nav {
+                padding: 20px;
+                font-size: 24px;
+            }
+            button {
+                float: left;
+            }
+            a {
+                background-color: white;
+                color: black;
+                font-family: 'Open Sans', sans-serif;
+            }
+            footer {
+                bottom: 0px;
+                position: fixed;
+                height: 50px;
+                width: 100%;
+                background-color: #f1f1f1;
+                color: black;
+                font-size: 15px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            a:hover {
+                color: grey;
+            }
+            /* light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+.dark-mode-toggle .light-mode-icon {
+  display: none;
+}
+.dark-mode-icon {
+    font-size: 45px;
+}
+.light-mode-icon {
+    font-size: 45px;
+}
+.label {
+    float: left;
+}
+.print-button {
+    position: absolute;
+    left: 320px;
+}
+.print-icon {
+    font-size: 45px;
+}
+.refresh-icon {
+    font-size: 45px;
+}
+.refresh-button {
+    position: absolute;
+    left: 385px;
+}
+.note {
+    font-size: 20px;
+    color: black;
+}
+.divnote {
+    height: 70px;
+    width: 40%;
+    text-align: center;
+    background-color: rgb(93, 184, 214);
+    border-left: darkblue 10px solid;
+    padding: 30px;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="learnjs.html"><img title="The logo of JavaScript" src="images/js.png" id="logo" height="200px"></a><h1>Learn JavaScript</h1>
+        <nav><a href="learnjs.html" title="Our Learn JS tutorial">Learn JS</a>&nbsp;&nbsp;&nbsp;<a href="editors.html">Code Editors</a>&nbsp;&nbsp;&nbsp;<a href="learnpy.html" title="Our Python Course">Learn Python</a></nav>
+        <p class="label">Mode:</p>
+        <button id="mode-toggle" class="dark-mode-toggle">
+            <i title="Switch to dark mode" class="material-icons dark-mode-icon">dark_mode</i>
+            <i title="Switch to light mode" class="material-icons light-mode-icon">light_mode</i>
+          </button>                
+          <button class="print-button" onclick="window.print();" title="Print this page">
+            <i class="material-icons print-icon" title="Print this page">print</i>
+          </button>          
+          <button class="refresh-button" onclick="refreshPage()" title="Refresh/clear consoles">
+            <i class="material-icons refresh-icon" title="Refresh/clear consoles">refresh</i>
+          </button>
+        </header>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h1>Quiz answers</h1>
+        <h2>Answer sheet</h2>
+        <p>Answers to the quiz on the JS tutorial:</p>
+        <h2>Question 1:</h2>
+        <p>Answer: Option 1, Option 6</p>
+        <p>Explanation: JS comments are //comment and /* comment */</p>
+        <br>
+        <h2>Question 2:</h2>
+        <p>Answer: console.log</p>
+        <p>Explanation: The console.log() method is used to print to the console.</p>
+        <br>
+        <h2>Question 3:</h2>
+        <p>Answer: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1</p>
+        <p>Explanation: The while loop uses the i-- keyword to lower down from the value of i. It is 10, so it lowers down while i is above 0.</p>
+        <br>
+        <h2>Question 4:</h2>
+        <p>Answer: [ 'violet', 'orchid' ]</p>
+        <p>Explanation: the .slice() method determines the start and end point. It starts with flowers[1] which is violet, and then cuts out the chunk between [1] and [3] which is [1] and [2] (violet and orchid)</p>
+        <br>
+        <h2>Question 5:</h2>
+        <p>Answer: The bird is a lorikeet.</p>
+        <p>Explanation: Since the value of bird is lorikeet, and that applies to the if...else statement, it will print 'The bird is a lorikeet.' to the console.</p>
+        <br>
+        <h2>Question 6:</h2>
+        <p>Answer: 27</p>
+        <p>Explanation: The console.log() statement logs 50 divided by 2 + 2 which is 27.</p>
+        <br>
+        <h2>Question 7:</h2>
+        <p>Answer: The bird is a goose</p>
+        <p>Explanation: Since the code example uses the + keyword to add another value of the variable, it prints goose. There is no full stop there, and goose is in lower case when declared in the variable.</p>
+        <br>
+        <h2>Question 8:</h2>
+        <p>Answer: 7</p>
+        <p>Explanation: Since the Math.floor() method rounds the number down to the nearest integer lower than the original number, then the output is 7, even though 7.99 is closer to 8.</p>
+        <br>
+        <h2>Question 9:</h2>
+        <p>Answer: num1 and num2 are the same.</p>
+        <p>Explanation: Since they are the same number, and none of the if and else if statements apply, it runs the else statement which logs 'num1 and num2 are the same.' to the console.</p>
+        <br>
+        <h2>Question 10:</h2>
+        <p>Answer: 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19</p>
+        <p>Explanation: the variable i starts at 0, and then uses the i--; keyword to lower it down from 0. Since it is while i is greater than -20, it lowers down until -19 because since its going down by 1, -19 is the lowest number possible greater than 20.</p>
+        <br>
+        <h2>Question 11:</h2>
+        <p>Answer: <code>plants.slice(1, 3);</code> or <code>console.log(plants.slice(1, 3));</code></p>
+        <p>Explanation: The .slice() method specifies the starting point and the ending point. the starting point is plants[1] which is tree, and the ending point is plants[2], which is bush. Since it cuts that portion out, in between is just the string 'tree'.</p>
+        <br>
+        <h2>Question 12:</h2>
+        <p>Answer: <code>numbers.push(13);<br>console.log(numbers);</code></p>
+        <p>Explanation: The pattern is going up in 2s from 3. Therefore, the last number in the pattern will be 13. Using the .push() method pushes a new string or number to the array, so we push 13.</p>
+        <footer>Copyright &copy; Albert Kemp 2023. All rights reserved.</footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script>
+            const modeToggleBtn = document.getElementById('mode-toggle');
+const body = document.body;
+
+modeToggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    modeToggleBtn.classList.add('light-mode-toggle');
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'inline-block';
+  } else {
+    modeToggleBtn.classList.remove('light-mode-toggle');
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'inline-block';
+  }
+});
+function refreshPage() {
+    var textareas = document.getElementsByTagName("textarea");
+  for (var i = 0; i < textareas.length; i++) {
+    var currentTextarea = textareas[i];
+    if (currentTextarea.id === "inputtextarea") {
+      currentTextarea.value = "//Put your input in here";
+    } else if (currentTextarea.id === "inputtextareavar") {
+      currentTextarea.value = "//Put your input in here";
+    } else {
+      currentTextarea.value = "//Output will appear here";
+    }
+}
+var pTags = document.querySelectorAll("p[id^='p']");
+  for (var i = 0; i < pTags.length; i++) {
+    pTags[i].innerHTML = "";
+  }
+  var otherps = document.querySelectorAll("p[id^='q']");
+  for (var i = 0; i < otherps.length; i++) {
+    otherps[i].innerHTML = "";
+  }
+  var inputcheckboxes = document.getElementsByTagName("input");
+  for (var i = 0; i < inputcheckboxes.length; i++) {
+    var currentCheckbox = inputcheckboxes[i];
+    if (currentCheckbox.type === "checkbox") {
+      currentCheckbox.checked = false;
+    }
+  }
+  var thisinput = document.getElementById("q2c1");
+  thisinput.value = "";
+}
+            </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            footer {
+                bottom: 0px;
+                position: fixed;
+                height: 50px;
+                width: 100%;
+                background-color: #f1f1f1;
+                color: black;
+                font-size: 15px;
+                font-family: 'Open Sans', sans-serif;
+            }
+        </style>
+        <title>Win the jackpot</title>
+    </head>
+    <body>
+        <h1>Win the jackpot 💰</h1>
+        <p>Enter your name and guess a number between 0 and 10. If you guess the right one, you win the jackpot!</p>
+        <label>Name:</label><input id="userName">
+        <label>Guess:</label><input id="guess">
+        <button onclick="submit()">Submit</button>
+        <p id="output"></p>
+        <footer>Copyright &copy; Albert Kemp 2023. All rights reserved.</footer>
+        <script>
+            function submit() {
+                var userName = document.getElementById("userName").value;
+                var guess = parseInt(document.getElementById("guess").value);
+                var realnumber = Math.floor(Math.random() * 10) + 1;
+                if (guess == realnumber) {
+                    document.getElementById("output").innerHTML = "Congratulations " + userName + "! You won the jackpot! 💰";
+                } else {
+                    document.getElementById("output").innerHTML = "Sorry " + userName + ", you lost. The number was " + realnumber + ".";
+                }
+            }
+        </script>
+    </body>
+</html>

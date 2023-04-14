@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn JavaScript</title>
+        <link rel="shorcut icon" href="images/js.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            textarea {
+                height: 100px;
+                width: 600px;
+                border-radius: 0;
+                border: 1px solid black;
+                padding: 5px;
+                font-size: 20px;
+                padding: 0;
+            }
+            #logo {
+                float: left;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            nav {
+                padding: 20px;
+                font-size: 24px;
+            }
+            button {
+                float: left;
+            }
+            a {
+                background-color: white;
+                color: black;
+                font-family: 'Open Sans', sans-serif;
+            }
+            footer {
+                bottom: 0px;
+                position: fixed;
+                height: 50px;
+                width: 100%;
+                background-color: #f1f1f1;
+                color: black;
+                font-size: 15px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            a:hover {
+                color: grey;
+            }
+            /* light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+.dark-mode-toggle .light-mode-icon {
+  display: none;
+}
+.dark-mode-icon {
+    font-size: 45px;
+}
+.light-mode-icon {
+    font-size: 45px;
+}
+.label {
+    float: left;
+}
+.print-button {
+    position: absolute;
+    left: 345px;
+}
+.print-icon {
+    font-size: 45px;
+}
+.refresh-icon {
+    font-size: 45px;
+}
+.refresh-button {
+    position: absolute;
+    left: 410px;
+}
+.note {
+    font-size: 20px;
+    color: black;
+}
+.divnote {
+    height: 70px;
+    width: 40%;
+    text-align: center;
+    background-color: rgb(224, 240, 246);
+    border-left: darkblue 10px solid;
+    padding: 30px;
+}
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+input[type="radio"] {
+    height: 20px;
+    width: 20px;
+}
+li {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+  padding: 20px;
+}
+#advertisement {
+    background-color: rgb(224, 240, 246);
+    height: 150px;
+    width: 150px;
+    padding: 30px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border: 1px solid rgb(203, 203, 203);
+}
+#h2ad {
+    background-color: rgb(224, 240, 246);
+    color: black;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="advertisement"><h2 id="h2ad">Try our quiz!</h2><a href="#quizheader"><button title="try our JS quiz">Try it now!</button></a></div>
+            <a href="learnjs.html"><img title="The logo of JavaScript" src="images/js.png" id="logo" height="200px"></a><h1>Learn JavaScript</h1>
+        <nav><a href="learnjs.html" title="Our Learn JS tutorial">Learn JS</a>&nbsp;&nbsp;&nbsp;<a href="editors.html" title="Our code editors">Code Editors</a>&nbsp;&nbsp;&nbsp;<a href="learnpy.html" title="Our Python Course">Learn Python</a></nav>
+        <p class="label">Mode:</p>
+        <button id="mode-toggle" class="dark-mode-toggle">
+            <i title="Switch to dark mode" class="material-icons dark-mode-icon">dark_mode</i>
+            <i title="Switch to light mode" class="material-icons light-mode-icon">light_mode</i>
+          </button>                
+          <button class="print-button" onclick="window.print();" title="Print this page">
+            <i class="material-icons print-icon" title="Print this page">print</i>
+          </button>          
+          <button class="refresh-button" onclick="refreshPage()" title="Refresh/clear consoles">
+            <i class="material-icons refresh-icon" title="Refresh/clear consoles">refresh</i>
+          </button>
+        </header>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h2>#1. Introduction to JS</h2>
+        <p>JavaScript is a front-end programming language used by many applications. It is also easy to learn.</p>
+        <hr>
+        <h2>Logging to the console:</h2>
+        <p>You should have a console set up. I recommend Programiz's <a href="https://www.programiz.com/javascript/online-compiler/" title="Programiz's Online JS compiler" target="blank">Online JavaScript Compiler</a> to use for some of these. You can also do it with our little examples. This is how to log to the console:</p>
+        <img src="images/console.png" height="100px" alt="Logging to the console" title="Logging to the console">
+        <p>Now you try logging "Hello World!" to the console:</p>
+        <div class="divnote"><h2 class="note">Stuck? You can watch a video of one of our experts explaining a problem <a href="unstuck.html" title="A video to help you get unstuck">here</a>.</h2></div>
+        <h2>Input:</h2>
+        <textarea id="inputtextarea">//Put your input in here</textarea><button onclick="runCode()" title="Run Code">Run</button>
+        <br>
+        <h2>Output:</h2>
+        <textarea id="outputtextarea">//Your output will show here</textarea>
+        <p id="p1"></p>
+        <br>
+        <hr>
+        <h2>Variables:</h2>
+        <p>If you want to store a number (123) or a string('this is a string')*, you can store it in a variable. Variables are almost always used in JS code. There are three keywords, Var, Const and Let. var is the most widely supported keyword, const is for a constant (not reassignable) variable and let is for an easily reassignable variable. Let's create a variable and log its value to the console.</p>
+        <p>*Numbers and strings are stored differently: var myNumber = 100; var myString = 'hello';</p>
+        <img src="images/variable.png" height="150px" alt="Logging the value of a variable to the console" title="Logging the value of a variable to the console">
+        <p>Now how about trying to do that code example yourself?</p>
+        <h2>Input:</h2>
+        <textarea id="inputtextareavar">//Put your input here</textarea><button onclick="runVarinput()" title="Run Code">Run</button>
+        <br>
+        <h2>Output:</h2>
+        <textarea id="outputtextareavar">//Your output will appear here</textarea>
+        <p id="p2"></p>
+        <hr>
+        <h2>Reassigning let variables</h2>
+        <p>Let variables can be reassigned. Here is an example:</p>
+        <img src="images/reassign.png" height="150px" alt="Reassigning a let variable" title="Reassigning a let variable">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runReassign()" title="Run Code">Run</button>
+        <textarea id="myTextarea13">//Output will appear here</textarea>
+        <p id="p3"></p>
+        <br>
+        <hr>
+        <h2>Functions:</h2>
+        <p>What if you want to do something quicker? You can use a function like this one here:</p>
+        <img src="images/function.png" height="150px" alt="A function" title="A function">
+        <p>When the function is run (sayHello();) then it runs the thing specified in the curly braces {} to the console. You can run it again by typing it again, and it will run two times.</p>
+        <p>Try testing the output:</p>
+        <button onclick="runFunction()" title="Run Code">Run</button>
+        <textarea id="myTextarea3">//Output will appear here</textarea>
+        <p id="p4"></p>
+        <br>
+        <hr>
+        <h2>Comments:</h2>
+        <p>A JS comment is just //comment with putting two slashes. A block comment, (to comment out a block) is /* comment */. Anything in between the two /* is commented out. A comment means for whatever you are using to run your code to ignore whatever is in between or after the comment tags.</p>
+        <img src="images/comments.png" height="200px" alt="JS comments" title="An image of JS comments">
+        <br>
+        <hr>
+        <h2>If...else statements</h2>
+        <p>If you want to do something if a condition is met, you can use an if...else statement. Here is an example:</p>
+        <img src="images/ifstatement.png" height="150px" alt="if" title="An if statement">
+        <p>That is an if statement. But what if the condition specified in the brackets (()) is not true? That's where you can add an else statement:</p>
+        <img src="images/else.png" height="150px" alt="else" title="An if...else statement">
+        <p>You can also add else if statements to be more specific:</p>
+        <img src="images/elseif.png" height="200px" alt="Else if" title="An else if inside an if...else statement">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runIfelse()" title="Run Code">Run</button>
+        <textarea id="myTextarea4">//Output will appear here</textarea>
+        <p id="p5"></p>
+        <br>
+        <hr>
+        <h2>Greater (&gt;) and Lesser (&lt;):</h2>
+        <p>These are used to compare numbers. If you want to check if a number is greater than another number, you can use &gt;. If you want to check if a number is less than another number, you can use &lt;. Here is an example:</p>
+        <img src="images/greaterlesser.png" height="200px" alt="Greater and lesser" title="Greater and lesser">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runGt()" title="Run Code">Run</button>
+        <textarea id="myTextarea5">//Output will appear here</textarea>
+        <p id="p6"></p>
+        <br>
+        <hr>
+        <h2>Variable strings in text:</h2>
+        <p>When you want to use a variable in a string, you can use the + or ${} operator. Here is an example:</p>
+        <img src="images/embed.png" height="150px" alt="Variable strings in text" title="Variable strings in text">
+        <p>Remember to use backticks (``) instead of single or double quotes</p>
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runStringtext()" title="Run Code">Run</button>
+        <textarea id="myTextarea6">//Output will appear here</textarea>
+        <p id="p7"></p>
+        <br>
+        <hr>
+        <h2>Plus, Minus, Division and multiplication</h2>
+        <p>You can easily add or subtract 1 to a number variable with myVariable++ and myVariable--</p>
+        <img src="images/adminus.png" height="150px" alt="plus and minus" title="Plus and Minus">
+        <p>You can also multiply or divide a number variable with * and myVariable /:</p>
+        <img src="images/divmult.png" height="150px" alt="Division and Multiplication" title="Division and Multiplication">
+        <p>* in JS means times and / in JS means divide</p>
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runplusminus()" title="Run Code">Run</button>
+        <textarea id="myTextarea7">//Output will appear here</textarea>
+        <p id="p8"></p>
+        <hr>
+        <h2>Arrays:</h2>
+        <p>Arrays are used to store multiple values in one variable. Here is an example:</p>
+        <img src="images/array.png" height="50px" alt="An array" title="An array">
+        <p>You can take off the last string of an array with flowers.pop() and add another to the end with flowers.push(). Let's try pushing a string to an array!</p>
+        <img src="images/push.png" height="150px" alt=".push()" title="An example of .push()">
+        <p>Now let's try taking the last string off! (flowers.pop()):</p>
+        <img src="images/pop.png" height="150px" alt=".pop()" title="An example of .pop()">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runArray()" title="Run Code">Run</button>
+        <textarea id="myTextarea8">//Output will appear here</textarea>
+        <p id="p9"></p>
+        <br>
+        <hr>
+        <h2>While and For loops</h2>
+        <p>While loops are used to run a block of code while a condition is true. Let's try printing 1 to 10 with a while loop:</p>
+        <img src="images/whileloop.png" height="200px" alt="A while loop" title="A while loop">
+        <p>There are also for loops which can have the syntax reduced:</p>
+        <img src="images/forloop.png" height="150px" alt="a for loop" title="A for loop">
+        <p>The for loops work like this: path 1, i is lower than 0, then, is i lower than 10? Yes! So increase i by 1 (i++) and then inside the curly braces is printing i + 1 because it is less than 10, not less or exactly 10. So, for loops can do the same thing as while loops.</p>
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runLoop()" title="Run Code">Run</button>
+        <textarea id="myTextarea9">//Output will appear here</textarea>
+        <p id="p10"></p>
+        <br>
+        <hr>
+        <h2>Do...while</h2>
+        <p>Do...while statements are basically while loops, just with different order. Here is an example:</p>
+        <img src="images/dowhile.png" height="200px" alt="A do while" title="A do while loop">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runDowhile()" title="Run Code">Run</button>
+        <textarea id="myTextarea10">//Output will appear here</textarea>
+        <p id="p11"></p>
+        <br>
+        <hr>
+        <h2>And (&&) and Or (||):</h2>
+        <p>These are used to compare two conditions. If you want to check if two conditions are true, you can use &&. If you want to check if one of the conditions is true, you can use ||. Here is an example:</p>
+        <img src="images/andor.png" height="200px" alt="And and Or in an if...else statement" title="And and or in an if...else statement">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runAndor()" title="Run Code">Run</button>
+        <textarea id="myTextarea11">//Output will appear here</textarea>
+        <p id="p12"></p>
+        <br>
+        <hr>
+        <h2>Not (!=)</h2>
+        <p>What if you are working on an if...else statement and you want to specify if something is not true? You can use the simple != keyword to do that! Here is an example:</p>
+        <img src="images/not.png" height="150px" alt="not" title="The not keyword">
+        <p>It is basically saying if spaghetti is pasta then log the first message, if spaghetti is not pasta then log the second message.</p>
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runNot()" title="Run Code">Run</button>
+        <textarea id="myTextarea12">//Output will appear here</textarea>
+        <p id="p13"></p>
+        <br>
+        <hr>
+        <h2>the .length keyword</h2>
+        <p>What if you want to know how many characters are in a string? You can use the .length keyword! Here is an example:</p>
+        <img src="images/length.png" height="100px" alt="the .length keyword" title="the .length keyword">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runLength()" title="Run Code">Run</button>
+        <textarea id="myTextarea14">//Output will appear here</textarea>
+        <p id="p14"></p>
+        <br>
+        <hr>
+        <h2>Math.floor()</h2>
+        <p>You can also round numbers to the nearest integer lower than the original number. Here is an example:</p>
+        <img src="images/math.floor.png" height="100px" alt="the Math.floor() keyword in action" title="The Math.floor() keyword">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runMathfloor()" title="Run Code">Run</button>
+        <textarea id="myTextarea15">//Output will appear here</textarea>
+        <p id="p15"></p>
+        <br>
+        <hr>
+        <h2>The break; keyword</h2>
+        <p>If you want to stop an infinite loop running if something is true, you can use the break; keyword inside an if...else statement! Here is an example:</p>
+        <img src="images/break.png" height="300px" alt="The break; keyword" title="The break; keyword">
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runBreak()" title="Run Code">Run</button>
+        <textarea id="myTextarea16">//Output will appear here</textarea>
+        <p id="p16"></p>
+        <br>
+        <hr>
+        <h2>the .slice() keyword</h2>
+        <p>If you want to slice out a specific section of an array, the .slice() keyword is for you! You can slice out a section of your shopping list, for example:</p>
+        <img src="images/slice.png" height="100px" alt="The .slice() keyword" title="the .slice() keyword">
+        <p>The .slice() keyword specifies the start of the chunk you want to slice (0) which is eggs because arrays start with 0, and then to 2 which is butter. It slices out the chunk there which is eggs and milk.</p>
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runSlice()" title="Run Code">Run</button>
+        <textarea id="myTextarea17">//Output will appear here</textarea>
+        <p id="p17"></p>
+        <br>
+        <hr>
+        <h2>While loops inside Functions:</h2>
+        <p>What if you want to have a very useful function to say hello three times to everyone you meet? You could have something like that with this code:</p>
+        <img src="images/whileloopinfunction.png" height="200px" alt="A while loop in a function printing Hello! three times" title="A while loop that prints Hello! three times">
+        <p>In the example above, we have the function and inside we have a while loop that will print Hello 3 times. If you want to do it again, you can just run the function again (sayHello3times();) and it will print them another three times. This will be quicker than making two while loops!</p>
+        <p>Now try running the output:</p>
+        <h2>Console:</h2>
+        <button onclick="runWhileloopinfunction()" title="Run Code">Run</button>
+        <textarea id="myTextarea18">//Output will appear here</textarea>
+        <p id="p18"></p>
+        <br>
+        <hr id="quizheader">
+        <h2>Quiz:</h2>
+        <p>You have unlimited time to answer the quiz. It doesn't matter if you get the questions wrong, just try to learn! There is a score option to see how many questions you got right at the end (optional). If you want to see your score, try the questions only once, so that an accurate measure can be obtained. There is an answer sheet, but <b>please</b> don't go peeping in it if you want to do the quiz.</p>
+        <hr>
+        <h2>Question 1:</h2>
+        <p>What is the correct way to write a comment in JavaScript? Choose all options that apply.</p>
+        <ol>
+            <li><input type="checkbox" id="q1c1">//This is a comment</li>
+            <li><input type="checkbox" id="q1c2">#This is a comment</li>
+            <li><input type="checkbox" id="q1c3">&lt;!--This is a comment--&gt;</li>
+            <li><input type="checkbox" id="q1c4">-- This is a comment</li>
+            <li><input type="checkbox" id="q1c5">"""This is a comment"""</li>
+            <li><input type="checkbox" id="q1c6">/* This is a comment */</li>
+        </ol>
+        <button onclick="checkq1Results()" title="Check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q1results">Results will appear here</p>
+        <br>
+        <hr>
+        <h2>Question 2:</h2>
+        <p>Fill in the missing part of printing Hello World! to the console:</p>
+        <p><input id="q2c1">("Hello World!");</p>
+        <button onclick="checkq2Results()" title="Check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q2results">Results will appear here</p>
+        <footer>Copyright &copy; Albert Kemp 2023. All rights reserved.</footer>
+        <br>
+        <hr>
+        <h2>Question 3:</h2>
+        <p>What will this while loop print?</p>
+        <img src="images/downloop.png" height="150px" alt="A while loop" title="a while loop">
+        <ol>
+            <li><input type="radio" id="q3c1" name="q3">1 2 3 4  5 6 7 8 9 10</li>
+            <li><input type="radio" id="q3c2" name="q3">10 9 8 7 6 5 4 3 2 1</li>
+            <li><input type="radio" id="q3c3" name="q3">9 8 7 6 5 4 3 2 1</li>
+            <li><input type="radio" id="q3c4" name="q3">11 10 9 8 7 6 5 4 3 2 1</li>
+        </ol>
+        <button onclick="checkq3Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q3results">Your results will appear here.</p>
+        <br>
+        <hr>
+        <h2>Question 4:</h2>
+        <p>What will the code below do?</p>
+        <img src="images/quizslice.png" height="100px" alt="A slice method" title="A JS slice">
+        <ol>
+            <li><input type="radio" id="q4c1" name="q4">[ 'rose', 'violet' ]</li>
+            <li><input type="radio" id="q4c2" name="q4">[ 'violet' ]</li>
+            <li><input type="radio" id="q4c3" name="q4">[ 'violet', 'orchid' ]</li>
+            <li><input type="radio" id="q4c4" name="q4">[ 'orchid' ]</li>
+        </ol>
+        <button onclick="checkq4Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q4results">Your results will appear here.</p>
+        <br>
+        <hr>
+        <h2>Question 5:</h2>
+        <p>What will this if...else statement print to the console?</p>
+        <img src="images/quizifelse.png" height="200px" alt="an if...else statement" title="an if...else statement">
+        <ol>
+            <li><input type="radio" id="q5c1" name="q5">The bird isn't a lorikeet.</li>
+            <li><input type="radio" id="q5c2" name="q5">The bird is a lorikeet.</li>
+            <li><input type="radio" id="q5c3" name="q5">Other...</li>
+        </ol>
+        <button onclick="checkq5Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q5results">Your results will appear here.</p>
+        <br>
+        <hr>
+        <h2>Question 6:</h2>
+        <p>What will this division and addition do to the number?</p>
+        <img src="images/quizplusminus.png" height="100px" alt="a plus and division js" title="a plus and division js">
+        <ol>
+            <li><input type="radio" id="q6c1" name="q6">25</li>
+            <li><input type="radio" id="q6c2" name="q6">23</li>
+            <li><input type="radio" id="q6c3" name="q6">27</li>
+            <li><input type="radio" id="q6c4" name="q6">22.5</li>
+        </ol>
+        <button onclick="checkq6Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q6results">Your results will appear here.</p>
+        <br>
+        <hr>
+        <h2>Question 7:</h2>
+        <p>What will this console.log() statement print to the console?</p>
+        <img src="images/quizvtext.png" height="100px" alt="variables in text" title="variables in text">
+        <ol>
+            <li><input type="radio" id="q7c1" name="q7">The bird is a goose.</li>
+            <li><input type="radio" id="q7c2" name="q7">The bird is agoose</li>
+            <li><input type="radio" id="q7c3" name="q7">The bird is a Goose</li>
+            <li><input type="radio" id="q7c4" name="q7">The bird is a goose</li>
+            <li><input type="radio" id="q7c5" name="q7">The bird is a birdName</li>
+        </ol>
+        <button onclick="checkq7Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q7results">Your results will appear here.</p>
+        <br>
+        <hr>
+        <h2>Question 8:</h2>
+        <p>What will this Math.floor() code print to the console?</p>
+        <img src="images/quizmathfloor.png" height="50px" alt="The Math.floor() method" title="The Math.floor() method">
+        <ol>
+            <li><input type="radio" id="q8c1" name="q8">8</li>
+            <li><input type="radio" id="q8c2" name="q8">7</li>
+            <li><input type="radio" id="q8c3" name="q8">6</li>
+            <li><input type="radio" id="q8c4" name="q8">9</li>
+        </ol>
+        <button onclick="checkq8Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q8results">Your results will appear here</p>
+        <br>
+        <hr>
+        <h2>Question 9:</h2>
+        <p>What will this if...else statement log to the console?</p>
+        <img src="images/quizgt.png" height="250px" alt="an if...else statement" title="an if...else statement">
+        <ol>
+            <li><input type="radio" id="q9c1" name="q9">num1 is lesser than num2</li>
+            <li><input type="radio" id="q9c2" name="q9">num1 is greater than num2</li>
+            <li><input type="radio" id="q9c3" name="q9">num1 and num2 are the same</li>
+        </ol>
+        <button onclick="checkq9Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q9results">Your results will appear here</p>
+        <br>
+        <hr>
+        <h2>Question 10:</h2>
+        <p>What will this for loop log to the console?</p>
+        <img src="images/quizfor.png" height="150px" alt="a for loop" title="a for loop">
+        <ol>
+            <li><input type="radio" id="q10c1" name="q10">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20</li>
+            <li><input type="radio" id="q10c2" name="q10">0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20</li>
+            <li><input type="radio" id="q10c3" name="q10">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19</li>
+            <li><input type="radio" id="q10c4" name="q10">0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19</li>
+        </ol>
+        <button onclick="checkq10Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q10results">Your results will appear here</p>
+        <br>
+        <hr>
+        <h2>Question 11:</h2>
+        <p>Please slice out the string: 'tree' from this array:</p>
+        <img src="images/quizarray.png" height="50px" alt="an array" title="an array">
+        <input id="q11input">
+        <button onclick="checkq11Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q11results">Your results will appear here</p>
+        <br>
+        <hr>
+        <h2>Question 12:</h2>
+        <p>Please push the next number in the pattern to the array 'numbers', then log the array numbers to the console.</p>
+        <img src="images/quizarray2.png" height="50px" alt="an array" title="an array">
+        <textarea id="q12c1">//Put your code in here</textarea>
+        <button onclick="checkq12Results()" title="check my results">Check my results</button>
+        <h2>Results:</h2>
+        <p id="q12results">Your results will appear here</p>
+        <br>
+        <hr>
+        <h2>Congratulations! You've completed the quiz.</h2>
+        <p>You can check your answers or fill out the quiz again. <a href="#quizheader"><button onclick="refreshPage()" title="clear questions and go back to start of quiz">fill out the quiz again</button></a><a href="answers.html"><button title="view answer sheet">View question answers</button></a></p>
+        <button onclick="showScore()" title="show how many questions you got right">Show my score</button><p>You can also show your score for how many questions you got right!</p>
+        <h2>Score:</h2>
+        <p id="showscore">Your score will appear here</p>
+        <a href="learnjs.html"><button title="go back to the top of the page">Back to top</button></a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script>
+        var score = 0;
+        function checkq12Results() {
+            var q12c1 = document.getElementById("q12c1").value;
+            if (q12c1 == 'numbers.push(13); console.log(numbers);') {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13); console.log(numbers)\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13); console.log(numbers);") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13); console.log(numbers)\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13); console.log(numbers);\n\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13); console.log(numbers)\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13); console.log(numbers);") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else if (q12c1 == "numbers.push(13);\nconsole.log(numbers);\n\n") {
+                document.getElementById("q12results").innerHTML = '✅ Correct! That is how to push to an array';
+                score++;
+            } else {
+                document.getElementById("q12results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq11Results() {
+            var q11input = document.getElementById("q11input").value;
+            if (q11input == 'console.log(plants.slice(1, 3));') {
+                document.getElementById("q11results").innerHTML = '✅ Correct! That is how to slice out of an array';
+                score++;
+            } else if (q11input == "plants.slice(1, 3);") {
+                document.getElementById("q11results").innerHTML = '✅ Correct! That is how to slice out of an array';
+                score++;
+            } else {
+                document.getElementById("q11results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq10Results() {
+            var q10c1 = document.getElementById("q10c1");
+            var q10c2 = document.getElementById("q10c2");
+            var q10c3 = document.getElementById("q10c3");
+            var q10c4 = document.getElementById("q10c4");
+            if (q10c4.checked && !q10c1.checked && !q10c2.checked && !q10c3.checked) {
+                document.getElementById("q10results").innerHTML = '✅ Correct! The answer is "0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19".';
+                score++;
+            } else {
+                document.getElementById("q10results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq9Results() {
+            var q9c1 = document.getElementById("q9c1");
+            var q9c2 = document.getElementById("q9c2");
+            var q9c3 = document.getElementById("q9c3");
+            if (q9c3.checked && !q9c1.checked && !q9c2.checked) {
+                document.getElementById("q9results").innerHTML = '✅ Correct! The answer is "num1 and num2 are the same".';
+                score++;
+            } else {
+                document.getElementById("q9results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq8Results() {
+            var q8c1 = document.getElementById("q8c1");
+            var q8c2 = document.getElementById("q8c2");
+            var q8c3 = document.getElementById("q8c3");
+            var q8c4 = document.getElementById("q8c4");
+            if (q8c2.checked && !q8c1.checked && !q8c3.checked && !q8c4.checked) {
+                document.getElementById("q8results").innerHTML = '✅ Correct! The answer is "7".';
+                score++;
+            } else {
+                document.getElementById("q8results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq7Results() {
+            var q7c1 = document.getElementById("q7c1");
+            var q7c2 = document.getElementById("q7c2");
+            var q7c3 = document.getElementById("q7c3");
+            var q7c4 = document.getElementById("q7c4");
+            var q7c5 = document.getElementById("q7c5");
+            if (q7c4.checked && !q7c1.checked && !q7c2.checked && !q7c3.checked && !q7c5.checked) {
+                document.getElementById("q7results").innerHTML = '✅ Correct! The answer is "The bird is a goose".';
+                score++;
+            } else {
+                document.getElementById("q7results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq6Results() {
+            var q6c1 = document.getElementById("q6c1");
+            var q6c2 = document.getElementById("q6c2");
+            var q6c3 = document.getElementById("q6c3");
+            var q6c4 = document.getElementById("q6c4");
+            if (q6c3.checked && !q6c1.checked && !q6c2.checked && !q6c4.checked) {
+                document.getElementById("q6results").innerHTML = '✅ Correct! The answer is 27.';
+                score++;
+            } else {
+                document.getElementById("q6results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq5Results() {
+            var q5c1 = document.getElementById("q5c1");
+            var q5c2 = document.getElementById("q5c2");
+            var q5c3 = document.getElementById("q5c3");
+            if (q5c2.checked && !q5c1.checked && !q5c3.checked) {
+                document.getElementById("q5results").innerHTML = '✅ Correct! The bird is a lorikeet.';
+                score++;
+            } else {
+                document.getElementById("q5results").innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq4Results() {
+            var q4c1 = document.getElementById("q4c1");
+            var q4c2 = document.getElementById("q4c2");
+            var q4c3 = document.getElementById("q4c3");
+            var q4c4 = document.getElementById("q4c4");
+            var q4results = document.getElementById("q4results");
+            if (q4c3.checked && !q4c1.checked && !q4c2.checked && !q4c4.checked) {
+                q4results.innerHTML = '✅ Correct! The slice method will return the items from the index you specify until the end.';
+                score++;
+            } else {
+                q4results.innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq3Results() {
+            var q3c1 = document.getElementById("q3c1");
+            var q3c2 = document.getElementById("q3c2");
+            var q3c3 = document.getElementById("q3c3");
+            var q3c4 = document.getElementById("q3c4");
+            var q3results = document.getElementById("q3results");
+            if (q3c2.checked && !q3c1.checked && !q3c3.checked && !q3c4.checked) {
+                q3results.innerHTML = '✅ Correct! The while loop will print 10 9 8 7 6 5 4 3 2 1';
+                score++;
+            } else {
+                q3results.innerHTML = '❌ Incorrect!';
+            }
+        }
+        function checkq2Results() {
+            var q2c1 = document.getElementById("q2c1").value;
+            var q2results = document.getElementById("q2results");
+            if (q2c1 === 'console.log') {
+                q2results.innerHTML = "✅ Correct! That is how to print to the console!";
+                score++;
+            } else {
+                q2results.innerHTML = "❌ Incorrect!";
+            }
+        } 
+        function checkq1Results() {
+            var q1c1 = document.getElementById("q1c1");
+            var q1c2 = document.getElementById("q1c2");
+            var q1c3 = document.getElementById("q1c3");
+            var q1c4 = document.getElementById("q1c4");
+            var q1c5 = document.getElementById("q1c5");
+            var q1c6 = document.getElementById("q1c6");
+            var q1results = document.getElementById("q1results");
+            if (q1c1.checked && q1c6.checked && !q1c2.checked && !q1c3.checked && !q1c4.checked && !q1c5.checked) {
+                q1results.innerHTML = "✅ Correct! You have selected all the correct answers!";
+                score++;
+            } else if (q1c1.checked && !q1c6.checked) {
+                q1results.innerHTML = "❌ Incorrect! You have selected one of the correct answers, but not the other one.";
+            } else if (q1c6.checked && !q1c1.checked) {
+                q1results.innerHTML = "❌ Incorrect! You have selected one of the correct answers, but not the other one.";
+            } else if (!q1c1.checked && !q1c6.checked) {
+                q1results.innerHTML = "❌ Incorrect! You have not selected any of the correct answers.";
+            } else {
+                q1results.innerHTML = "❌ Incorrect! You have selected some of the correct answers, but not all of them.";
+            }
+        }    
+        function showScore() {
+            var scoredisplay = document.getElementById("showscore");
+            scoredisplay.innerHTML = "You got " + score + "/12 correct.";
+        }  
+            function runCode() {
+  var textarea1value = document.getElementById("inputtextarea").value;
+  if (textarea1value === "console.log('Hello World!');") {
+    var textarea2 = document.getElementById("outputtextarea");
+    textarea2.value = "Hello World!";
+    var p1 = document.getElementById("p1");
+    p1.innerHTML = "✅ Your code has been successfully executed!";
+  } else if (textarea1value === 'console.log("Hello World!");') {
+    var textarea2 = document.getElementById("outputtextarea");
+    textarea2.value = "Hello World!";
+    var p1 = document.getElementById("p1");
+    p1.innerHTML = "✅ Your code has been successfully executed!";
+  } else {
+    var textarea2 = document.getElementById("outputtextarea");
+    textarea2.value = "";
+    var p1 = document.getElementById("p1");
+    p1.innerHTML = "❌ Your code is incorrect. Perhaps you missed a semicolon?";
+  }
+}
+function runVarinput() {
+    var textarea1valuev = document.getElementById("inputtextareavar").value;
+    if (textarea1valuev === "var flower = 'rose'; console.log(flower);") {
+        var textarea2v = document.getElementById("outputtextareavar");
+        textarea2v.value = "rose";
+        var p2 = document.getElementById("p2");
+        p2.innerHTML = "✅ Your code has been successfully executed!";
+    } else if (textarea1valuev === 'var flower = "rose"; console.log(flower);') {
+        var textarea2v = document.getElementById("outputtextareavar");
+        textarea2v.value = "rose";
+        var p2 = document.getElementById("p2");
+        p2.innerHTML = "✅ Your code has been successfully executed!";
+    } else if (textarea1valuev === 'var flower = "rose";\nconsole.log(flower);') {
+        var textarea2v = document.getElementById("outputtextareavar");
+        textarea2v.value = "rose";
+        var p2 = document.getElementById("p2");
+        p2.innerHTML = "✅ Your code has been successfully executed!";
+    } else if (textarea1valuev === "var flower = 'rose';\nconsole.log(flower);") {
+        var textarea2v = document.getElementById("outputtextareavar");
+        textarea2v.value = "rose";
+        var p2 = document.getElementById("p2");
+        p2.innerHTML = "✅ Your code has been successfully executed!";
+    } else {
+        var textarea2v = document.getElementById("outputtextareavar");
+        textarea2v.value = "";
+        var p2 = document.getElementById("p2");
+        p2.innerHTML = "❌ Your code is incorrect. Perhaps you missed a semicolon?";
+    }
+}
+            function runVariable() {
+                var textarea2 = document.getElementById("myTextarea2");
+                textarea2.value = "rose";
+                var p2 = document.getElementById("p2");
+                p2.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runFunction() {
+                var textarea3 = document.getElementById("myTextarea3");
+                textarea3.value = "Hello!";
+                var p4 = document.getElementById("p4");
+                p4.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runIfelse() {
+                var textarea4 = document.getElementById("myTextarea4");
+                textarea4.value = "The bird is a lorikeet";
+                var p5 = document.getElementById("p5");
+                p5.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runGt() {
+                var textarea5 = document.getElementById("myTextarea5");
+                textarea5.value = "NumberOne is lesser than numberTwo";
+                var p6 = document.getElementById("p6");
+                p6.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runStringtext() {
+                var textarea6 = document.getElementById("myTextarea6");
+                textarea6.value = "Hello albert\nHello albert";
+                var p7 = document.getElementById("p7");
+                p7.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runplusminus() {
+                var textarea7 = document.getElementById("myTextarea7");
+                textarea7.value = "101\n100\n200\n50";
+                var p8 = document.getElementById("p8");
+                p8.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runArray() {
+                var textarea8 = document.getElementById("myTextarea8");
+                textarea8.value = "[ 'violet', 'rose', 'magnolia', 'orchid' ]\n[ 'violet', 'rose' ]";
+                var p9 = document.getElementById("p9");
+                p9.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runLoop() {
+                var textarea9 = document.getElementById("myTextarea9");
+                textarea9.value = "1\n2\n3\n4\n5\n6\n7\n8\n9\n10";
+                var p10 = document.getElementById("p10");
+                p10.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runDowhile() {
+                var textarea10 = document.getElementById("myTextarea10");
+                textarea10.value = "1\n2\n3\n4\n5\n6\n7\n8\n9\n10";
+                var p11 = document.getElementById("p11");
+                p11.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runAndor() {
+                var textarea11 = document.getElementById("myTextarea11");
+                textarea11.value = "Either car1 and car2 are red and blue or car3 and car4 are yellow and green.";
+                var p12 = document.getElementById("p12");
+                p12.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runNot() {
+                var textarea12 = document.getElementById("myTextarea12");
+                textarea12.value = "Spaghetti is not pasta.";
+                var p13 = document.getElementById("p13");
+                p13.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runReassign() {
+                var textarea13 = document.getElementById("myTextarea13");
+                textarea13.value = "Albert";
+                var p3 = document.getElementById("p3");
+                p3.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runLength() {
+                var textarea14 = document.getElementById("myTextarea14");
+                textarea14.value = "7";
+                var p14 = document.getElementById("p14");
+                p14.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runMathfloor() {
+                var textarea15 = document.getElementById("myTextarea15");
+                textarea15.value = "7\n7";
+                var p15 = document.getElementById("p15");
+                p15.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runBreak() {
+                var textarea16 = document.getElementById("myTextarea16");
+                textarea16.value = "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\nI broke";
+                var p16 = document.getElementById("p16");
+                p16.innerHTML = "✅ Your code has been successfully executed!";
+            }       
+            function runSlice() {
+                var textarea17 = document.getElementById("myTextarea17");
+                textarea17.value = "[ 'eggs', 'milk' ]";
+                var p17 = document.getElementById("p17");
+                p17.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            function runWhileloopinfunction() {
+                var textarea18 = document.getElementById("myTextarea18");
+                textarea18.value = "Hello!\nHello!\nHello!";
+                var p18 = document.getElementById("p18");
+                p18.innerHTML = "✅ Your code has been successfully executed!";
+            }
+            const modeToggleBtn = document.getElementById('mode-toggle');
+const body = document.body;
+
+modeToggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    modeToggleBtn.classList.add('light-mode-toggle');
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'inline-block';
+  } else {
+    modeToggleBtn.classList.remove('light-mode-toggle');
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'inline-block';
+  }
+});
+function refreshPage() {
+    var textareas = document.getElementsByTagName("textarea");
+  for (var i = 0; i < textareas.length; i++) {
+    var currentTextarea = textareas[i];
+    if (currentTextarea.id === "inputtextarea") {
+      currentTextarea.value = "//Put your input in here";
+    } else if (currentTextarea.id === "inputtextareavar") {
+      currentTextarea.value = "//Put your input in here";
+    } else {
+      currentTextarea.value = "//Output will appear here";
+    }
+}
+var inputs = document.getElementsByTagName("input");
+for (var i = 0; i < inputs.length; i++) {
+    var currentInput = inputs[i];
+    currentInput.value = "";
+}
+
+var pTags = document.querySelectorAll("p[id^='p']");
+  for (var i = 0; i < pTags.length; i++) {
+    pTags[i].innerHTML = "";
+  }
+  var otherps = document.querySelectorAll("p[id^='q']");
+  for (var i = 0; i < otherps.length; i++) {
+    otherps[i].innerHTML = "";
+  }
+  var inputcheckboxes = document.getElementsByTagName("input");
+  for (var i = 0; i < inputcheckboxes.length; i++) {
+    var currentCheckbox = inputcheckboxes[i];
+    if (currentCheckbox.type === "checkbox") {
+      currentCheckbox.checked = false;
+    }
+  }
+  var thisinput = document.getElementById("q2c1");
+  thisinput.value = "";
+  var showscore = document.getElementById("showscore");
+showscore.innerHTML = "Your score will appear here.";
+
+var radios = document.getElementsByTagName("input");
+  for (var i = 0; i < radios.length; i++) {
+    var currentRadio = radios[i];
+    if (currentRadio.type === "radio") {
+      currentRadio.checked = false;
+    }
+  }
+
+score = 0;
+}
+            </script>
+    </body>
+</html>

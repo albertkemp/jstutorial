@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn Python</title>
+        <link rel="shorcut icon" href="images/python.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            textarea {
+                height: 100px;
+                width: 600px;
+                border-radius: 0;
+                border: 1px solid black;
+                padding: 5px;
+                font-size: 20px;
+                padding: 0;
+            }
+            #logo {
+                float: left;
+            }
+            button:hover {
+                cursor: pointer;
+            }
+            nav {
+                padding: 20px;
+                font-size: 24px;
+            }
+            button {
+                float: left;
+            }
+            a {
+                background-color: white;
+                color: black;
+                font-family: 'Open Sans', sans-serif;
+            }
+            footer {
+                bottom: 0px;
+                position: fixed;
+                height: 50px;
+                width: 100%;
+                background-color: #f1f1f1;
+                color: black;
+                font-size: 15px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            a:hover {
+                color: grey;
+            }
+            /* light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+.dark-mode-toggle .light-mode-icon {
+  display: none;
+}
+.dark-mode-icon {
+    font-size: 45px;
+}
+.light-mode-icon {
+    font-size: 45px;
+}
+.label {
+    float: left;
+}
+.print-button {
+    position: absolute;
+    left: 320px;
+}
+.print-icon {
+    font-size: 45px;
+}
+.refresh-icon {
+    font-size: 45px;
+}
+.refresh-button {
+    position: absolute;
+    left: 385px;
+}
+.note {
+    font-size: 20px;
+    color: black;
+}
+.divnote {
+    height: 70px;
+    width: 40%;
+    text-align: center;
+    background-color: rgb(93, 184, 214);
+    border-left: darkblue 10px solid;
+    padding: 30px;
+}
+input[type="checkbox"] {
+    height: 18px;
+    width: 18px;
+    background-color: green;
+}
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="learnjs.html"><img title="The logo of Python" src="images/python.png" id="logo" height="200px"></a><h1>Learn Python</h1>
+        <nav><a href="learnjs.html" title="Our Learn JS tutorial">Learn JS</a>&nbsp;&nbsp;&nbsp;<a href="editors.html" title="Our code editors">Code Editors</a>&nbsp;&nbsp;&nbsp;<a href="learnpy.html" title="Our Python Course">Learn Python</a></nav>
+        <p class="label">Mode:</p>
+        <button id="mode-toggle" class="dark-mode-toggle">
+            <i title="Switch to dark mode" class="material-icons dark-mode-icon">dark_mode</i>
+            <i title="Switch to light mode" class="material-icons light-mode-icon">light_mode</i>
+          </button>                
+          <button class="print-button" onclick="window.print();" title="Print this page">
+            <i class="material-icons print-icon" title="Print this page">print</i>
+          </button>          
+          <button class="refresh-button" onclick="refreshPage()" title="Refresh/clear consoles">
+            <i class="material-icons refresh-icon" title="Refresh/clear consoles">refresh</i>
+          </button>
+        </header>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <h1>Python answer sheet</h1>
+        <h2>Question 1:</h2>
+        <p>Answers: #This is a comment, """This is a comment"""</p>
+        <p>Explanation: In Python, # is used for line comment and """comment""" is used for a block comment.</p>
+        <br>
+        <h2>Question 2:</h2>
+        <p>Answer: print</p>
+        <p>The print() method in Python is used to print to the console.</p>
+        <br>
+        <h2>Question 3:</h2>
+        <p>Answer: The chicken is a car</p>
+        <p>Since the value of the variable chicken is 'car' and the if...else statement specifies that if the value of chicken is car than to print 'The chicken is a car' to the console.</p>
+        <br>
+        <h2>Question 4:</h2>
+        <p>Answer: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19</p>
+        <p>Explanation: The for loop starts with the variable i at 0, and specifies while i is in between 0 and 20 to increase it by 1 and print it to the console. But it is in range, and the print() statement isn't <code>print(i + 1)</code>, so the answer is 0 up to 19.</p>
+        <br>
+        <h2>Question 5:</h2>
+        <p>Answer: hello hello hello</p>
+        <p>Explanation: <code>i</code> is 0 and <code>i</code> goes up by 1 and prints the value which is the value in the brackets. In this case, the value is "hello" so it prints hello until i is not greater than 3 and stops. Thus it prints hello 3 times.</p>
+        <br>
+        <h2>Question 6:</h2>
+        <p>Answers: print("hello world"), print('hello world')</p>
+        <p>Explanation: Python doesn't use the console.log() statement or semicolons (;) but does accept both types of quotes (single and double)</p>
+        <br>
+        <h2>Question 7:</h2>
+        <p>Answer: num1 is greater than num2</p>
+        <p>Explanation: the number -4 is greater than the number -6, and the if else statement is saying if num1 (-4) is greater than num6 (-6) then log that to the console. That is true, so 'num1 is greater than num2' is logged to the console.</p>
+        <br>
+        <h2>Question 8:</h2>
+        <p>Answer: white</p>
+        <p>Explanation: Using the numbers[5] method, it slices out the 5th string in the array 'numbers'. numbers[0] is black, [1] is green,[2] is red and so on to [5], which is white.</p>
+        <footer>Copyright &copy; Albert Kemp 2023. All rights reserved.</footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <script>
+            const modeToggleBtn = document.getElementById('mode-toggle');
+const body = document.body;
+
+modeToggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    modeToggleBtn.classList.add('light-mode-toggle');
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'inline-block';
+  } else {
+    modeToggleBtn.classList.remove('light-mode-toggle');
+    modeToggleBtn.querySelector('.light-mode-icon').style.display = 'none';
+    modeToggleBtn.querySelector('.dark-mode-icon').style.display = 'inline-block';
+  }
+});
+function refreshPage() {
+    var textareas = document.getElementsByTagName("textarea");
+  for (var i = 0; i < textareas.length; i++) {
+    var currentTextarea = textareas[i];
+    if (currentTextarea.id === "inputtextarea") {
+      currentTextarea.value = "//Put your input in here";
+    } else if (currentTextarea.id === "inputtextareavar") {
+      currentTextarea.value = "//Put your input in here";
+    } else {
+      currentTextarea.value = "//Output will appear here";
+    }
+}
+var inputs = document.getElementsByTagName("input");
+for (var i = 0; i < inputs.length; i++) {
+    var currentInput = inputs[i];
+    currentInput.value = "";
+}
+
+var pTags = document.querySelectorAll("p[id^='p']");
+  for (var i = 0; i < pTags.length; i++) {
+    pTags[i].innerHTML = "";
+  }
+  var otherps = document.querySelectorAll("p[id^='q']");
+  for (var i = 0; i < otherps.length; i++) {
+    otherps[i].innerHTML = "";
+  }
+  var inputcheckboxes = document.getElementsByTagName("input");
+  for (var i = 0; i < inputcheckboxes.length; i++) {
+    var currentCheckbox = inputcheckboxes[i];
+    if (currentCheckbox.type === "checkbox") {
+      currentCheckbox.checked = false;
+    }
+  }
+  var thisinput = document.getElementById("q2c1");
+  thisinput.value = "";
+}
+            </script>
+    </body>
+</html>
